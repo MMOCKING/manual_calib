@@ -2,19 +2,17 @@
 
 ## 传感器安装示意图
 
-<img src="/home/lh/.config/Typora/typora-user-images/image-20231024104639827.png" alt="image-20231024104639827" style="zoom: 25%;" />
+<img src="pic/image-20231024104639827.png" alt="image-20231024104639827" style="zoom: 25%;" />
 
 ## 烟雾序列数据示意
 
 红外-可见光-激光-毫米波
 
-![image-20231024134210488](/home/lh/.config/Typora/typora-user-images/image-20231024134210488.png)
+![image-20231024134232081](pic/image-20231024134232081.png)
 
-![image-20231024134232081](/home/lh/.config/Typora/typora-user-images/image-20231024134232081.png)
+![image-20231024134252704](pic/image-20231024134252704.png)
 
-![image-20231024134252704](/home/lh/.config/Typora/typora-user-images/image-20231024134252704.png)
-
-![image-20231024134307114](/home/lh/.config/Typora/typora-user-images/image-20231024134307114.png)
+![image-20231024134307114](pic/image-20231024134307114.png)
 
 ## 红外内参标定
 
@@ -54,10 +52,6 @@ cameraParams.RadialDistortion
 -0.200600349900097   -0.045799082965466
 ```
 
-<img src="/media/lh/lh1/dataset/thermal_radar/calib_data/thermal_image_test/1698042392675241357.png" alt="1698042392675241357" style="zoom: 33%;" />
-
-<img src="/media/lh/lh1/dataset/thermal_radar/calib_data/crop_test/1698042393171473196.png" alt="1698042393171473196" style="zoom:50%;" />
-
 ## 激光-红外标定
 
 点云转化关系：$P_c = R * P_l + t$，然后将$P_c$通过内参投影至像素。
@@ -81,13 +75,7 @@ P lidar_to_cam:
     0 -0.18 -0.18
 ```
 
-![image-20231023210311298](/home/lh/.config/Typora/typora-user-images/image-20231023210311298.png)
-
-![image-20231023210331428](/home/lh/.config/Typora/typora-user-images/image-20231023210331428.png)
-
-![image-20231023210416170](/home/lh/.config/Typora/typora-user-images/image-20231023210416170.png)
-
-
+![2023-10-26 13-53-00 的屏幕截图](pic/2023-10-26 13-53-00 的屏幕截图.png)
 
 ## 激光-毫米波标定
 
@@ -95,22 +83,17 @@ P lidar_to_cam:
 
 点云转换关系：$P_{r}=R*P_{l}+t$
 
-| roll | pitch | yaw  | x    | y    | z     |
-| ---- | ----- | ---- | ---- | ---- | ----- |
-| 0    | 0     | 5    | 0.22 | 0    | -0.28 |
+| roll | pitch | yaw  | x    | y    | z    |
+| ---- | ----- | ---- | ---- | ---- | ---- |
+| 0.00 | 1.50  | 4.00 | 3.80 | 0.00 | 0.80 |
 
 ```cpp
 R lidar_to_radar:
-  0.996195 -0.0871557          0
- 0.0871557   0.996195          0
-         0          0          1
+  0.997222 -0.0697565  0.0261132
+ 0.0697326   0.997564 0.00182601
+-0.0261769          0   0.999657
 P lidar_to_radar:
- 0.22     0 -0.28
+3.8   0 0.8
 ```
 
-![image-20231024103208396](/home/lh/.config/Typora/typora-user-images/image-20231024103208396.png)
-
-![image-20231024104039592](/home/lh/.config/Typora/typora-user-images/image-20231024104039592.png)
-
-![image-20231024111740379](/home/lh/.config/Typora/typora-user-images/image-20231024111740379.png)
-
+![image-20231024103208396](pic/image-20231024103208396.png)
