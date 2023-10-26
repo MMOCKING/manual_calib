@@ -40,7 +40,7 @@ roslaunch ilcc2 lidar_radar_calib.launch
 
 数据采集场景：
 
-<img src="/media/lh/lh1/dataset/thermal_radar/manul_calib/src/lidar_camera_calibration-manual_calib/pic/data_collection.JPG" alt="data_collection" style="zoom: 25%;" />
+<img src="pic/data_collection.JPG" alt="data_collection" style="zoom: 25%;" />
 
 红外成像仪在烟雾中受影响很小。
 
