@@ -84,11 +84,9 @@ cameraParams.RadialDistortion
 
 ## 激光-红外标定
 
-点云转化关系：
-$$
-P_c = R * P_l + t
-$$
-然后将$P_c$通过内参投影至像素平面。
+点云转化关系：![](http://latex.codecogs.com/svg.latex?$P_c=R*P_l+t$)
+
+然后将![](http://latex.codecogs.com/svg.latex?$P_c$)通过内参投影至像素平面。
 
 https://github.com/icameling/lidar_camera_calibration/tree/manual_calib
 
@@ -115,10 +113,7 @@ P lidar_to_cam:
 
 根据原lidar_cam_calib的手动激光-毫米波标定。
 
-点云转换关系：
-$$
-P_r=R*P_l+t
-$$
+点云转换关系：![](http://latex.codecogs.com/svg.latex?$P_r=R*P_l+t$)
 
 | roll | pitch | yaw  | x    | y    | z    |
 | ---- | ----- | ---- | ---- | ---- | ---- |
