@@ -36,7 +36,17 @@ roslaunch ilcc2 lidar_radar_calib.launch
 
 ![image-20231026144020372](pic/image-20231026144020372.png)
 
-## 日间序列示意
+## 日间烟雾序列示意
+
+数据采集场景：
+
+<img src="/media/lh/lh1/dataset/thermal_radar/manul_calib/src/lidar_camera_calibration-manual_calib/pic/data_collection.JPG" alt="data_collection" style="zoom: 25%;" />
+
+红外成像仪在烟雾中受影响很小。
+
+https://github.com/MMOCKING/manual_calib/assets/61079012/a9ad471f-6c48-4780-8d07-7aca2389e94b
+
+## 日间晴朗序列示意
 
 红外成像仪能提供较清晰的图像。
 
