@@ -75,7 +75,7 @@ P lidar_to_cam:
     0 -0.18 -0.18
 ```
 
-![](pic/2023-10-26 13-53-00.png)
+![](pic/calib_thermal.png)
 
 ## 激光-毫米波标定
 
