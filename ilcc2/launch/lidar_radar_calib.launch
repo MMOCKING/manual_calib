@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="ilcc2" type="lidar_radar_calib" name="lidar_radar_calib" output="screen">
+    <param name="lidar_topic"         value= "/rslidar_points" />
+    <param name="radar_frame_id"         value= "car" />
+  </node>
+
+  <!-- <node pkg="tf" type="static_transform_publisher" name="lidar_to_radar_tf" args="0 0 0 0 0 0 rslidar car 100" /> -->
+  <!-- subscribe radar point cloud in lidar_radar.rviz -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ilcc2)/launch/lidar_radar.rviz" />
+  <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" output="screen"/>
+</launch>
+

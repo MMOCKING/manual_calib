@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="ilcc2" type="bag_extractor" name="bag_extractor" output="screen">
+    <param name="bag_file_path"  value= "/media/lh/lh1/dataset/thermal_radar/2023-10-20-14-35-31.bag" />
+  </node>
+
+</launch>
