@@ -16,25 +16,39 @@ roslaunch ilcc2 lidar_radar_calib.launch
 
 ## 传感器安装示例
 
-<img src="pic/image-20231024104639827.png" alt="image-20231024104639827" style="zoom: 25%;" />
+由上至下：固态激光雷达--RGBD相机--红外成像仪--4D毫米波雷达
 
-## 烟雾序列数据示意
+<img src="pic/image-20231024104639827.png" alt="image-20231024104639827" style="zoom: 20%;" />
 
-红外-可见光-激光-毫米波
+## 夜间烟雾序列示意
+
+途中分别为：灰度红外热成像、RGB可见光图像、彩色激光点云、白色毫米波点云
 
 注：红外成像为1920\*1080的图片，带有黑框，实际图像为640\*480。
 
-![image-20231024134232081](pic/image-20231024134232081.png)
+烟雾对激光和可见光有明显的遮挡，毫米波不受影响、红外光受影响较小。
 
-![image-20231024134252704](pic/image-20231024134252704.png)
+![image-20231026143905303](pic/image-20231026143905303.png)
 
-![image-20231024134307114](pic/image-20231024134307114.png)
+![image-20231026143920138](pic/image-20231026143920138.png)
+
+![image-20231026143938272](pic/image-20231026143938272.png)
+
+![image-20231026144020372](pic/image-20231026144020372.png)
+
+## 日间序列示意
+
+红外成像仪能提供较清晰的图像。
+
+<video src="/media/lh/lh1/dataset/thermal_radar/manul_calib/src/lidar_camera_calibration-manual_calib/pic/thermal.mp4"></video>
 
 ## 红外内参标定
 
 分别用matlab标定了有黑边1920\*1080和去除黑边640\*480图像。
 
 需要用太阳光均匀照大标定板。
+
+<img src="pic/calib_board.png" alt="calib_board" style="zoom:33%;" />
 
 ```matlab
 cameraParams.ImageSize
@@ -70,7 +84,11 @@ cameraParams.RadialDistortion
 
 ## 激光-红外标定
 
-点云转化关系：$P_c = R * P_l + t$，然后将$P_c$通过内参投影至像素。
+点云转化关系：
+$$
+P_c = R * P_l + t
+$$
+然后将$P_c$通过内参投影至像素平面。
 
 https://github.com/icameling/lidar_camera_calibration/tree/manual_calib
 
@@ -115,4 +133,8 @@ P lidar_to_radar:
 3.8   0 0.8
 ```
 
-![image-20231024103208396](pic/image-20231024103208396.png)
+![image-20231026145817517](pic/image-20231026145817517.png)
+
+![image-20231026150027794](pic/image-20231026150027794.png)
+
+![image-20231026145932346](pic/image-20231026145932346.png)
