@@ -1,12 +1,28 @@
-# 异构标定
+# Manual Camera-LiDAR-Radar Calibration
 
-## 传感器安装示意图
+相机-激光雷达外参标定
+
+```shell
+roslaunch ilcc2 lidar_cam_calib.launch
+```
+
+毫米波雷达-激光雷达外参标定
+
+```shell
+roslaunch ilcc2 lidar_radar_calib.launch
+```
+
+使用rqt窗口内的roll/pitch/yaw/x/y/z调整外参。
+
+## 传感器安装示例
 
 <img src="pic/image-20231024104639827.png" alt="image-20231024104639827" style="zoom: 25%;" />
 
 ## 烟雾序列数据示意
 
 红外-可见光-激光-毫米波
+
+注：红外成像为1920\*1080的图片，带有黑框，实际图像为640\*480。
 
 ![image-20231024134232081](pic/image-20231024134232081.png)
 
@@ -16,7 +32,7 @@
 
 ## 红外内参标定
 
-两个版本：分别用matlab标定了有黑边1920\*1080和去除黑边640\*480图像。
+分别用matlab标定了有黑边1920\*1080和去除黑边640\*480图像。
 
 需要用太阳光均匀照大标定板。
 
@@ -81,7 +97,10 @@ P lidar_to_cam:
 
 根据原lidar_cam_calib的手动激光-毫米波标定。
 
-点云转换关系：$P_{r}=R*P_{l}+t$
+点云转换关系：
+$$
+P_r=R*P_l+t
+$$
 
 | roll | pitch | yaw  | x    | y    | z    |
 | ---- | ----- | ---- | ---- | ---- | ---- |
