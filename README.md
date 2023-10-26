@@ -40,7 +40,7 @@ roslaunch ilcc2 lidar_radar_calib.launch
 
 红外成像仪能提供较清晰的图像。
 
-<video src="/media/lh/lh1/dataset/thermal_radar/manul_calib/src/lidar_camera_calibration-manual_calib/pic/thermal.mp4"></video>
+https://github.com/MMOCKING/manual_calib/assets/61079012/cfaede69-b8fa-4d71-8293-d795d60319e0
 
 ## 红外内参标定
 
