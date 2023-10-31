@@ -2,6 +2,8 @@
 
 ## 外参标定
 
+https://github.com/MMOCKING/manual_calib
+
 ### 备注
 
 - 本仓库基于 https://github.com/icameling/lidar_camera_calibration/tree/manual_calib 开发。
@@ -12,11 +14,9 @@
 
 ### 相机-激光雷达外参标定
 
-在launch文件中修改订阅的topic与点云显示距离。注意，需要根据图片topic是否为compressed类型修改lidar_cam_calib.cpp下的内容。
+在launch文件中修改订阅的topic与点云显示距离。注意，需要根据图片topic是否为compressed类型修改lidar_cam_calib.cpp下的变量类型，即`sensor_msgs::CompressedImage`相关内容。
 
-```cpp
-sensor_msgs::CompressedImage
-```
+另外，为了去除红外相机的黑边，lidar_cam_calib.cpp对接收到的图像进行了裁剪，在不使用红外相机时需要注释相关代码：`image_now = image_now(cv::Rect(640, 300, 640, 480));`。
 
 ```shell
 roslaunch ilcc2 lidar_cam_calib.launch
@@ -30,7 +30,15 @@ roslaunch ilcc2 lidar_cam_calib.launch
 roslaunch ilcc2 lidar_radar_calib.launch
 ```
 
-使用rqt窗口内的roll/pitch/yaw/x/y/z移动激光点云，调整外参。
+使用rqt窗口内的roll/pitch/yaw/x/y/z移动激光点云，调整外参。本仓库中采用的旋转顺序为YXZ。
+
+## ROSBAG数据提取
+
+在launch与cpp文件中分别修改读取的bag地址与topic。
+
+```
+roslaunch ilcc2 bag_extractor.launch
+```
 
 ## 传感器安装示例
 
@@ -74,9 +82,9 @@ https://github.com/MMOCKING/manual_calib/assets/61079012/cfaede69-b8fa-4d71-8293
 
 ### 红外内参标定
 
-分别用matlab标定了有黑边1920\*1080和去除黑边640\*480图像。
+大立VD641相机输出有黑边，需要去除。用太阳光均匀照大标定板，使用rosbag录下数据后，提取图片至本地，使用matlab标定工具箱标定。
 
-需要用太阳光均匀照大标定板。
+分别用matlab标定了有黑边1920\*1080和去除黑边640\*480图像。
 
 <img src="pic/calib_board.png" alt="calib_board" style="zoom:33%;" />
 
