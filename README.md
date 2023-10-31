@@ -4,9 +4,11 @@
 
 ### 备注
 
-- 本仓库基于https://github.com/icameling/lidar_camera_calibration/tree/manual_calib开发。
+- 本仓库基于 https://github.com/icameling/lidar_camera_calibration/tree/manual_calib 开发。
 - 需要修改config目录下的相机内参。
 - 如果需要微调，可以修改cfg/Locator.cfg文件中的外参初值与上下限。
+- 相机-激光雷达外参标定的空格键图像暂停功能有BUG，可以避免使用。
+- 相关传感器的先验旋转参考**标定示例**。
 
 ### 相机-激光雷达外参标定
 
@@ -68,7 +70,9 @@ https://github.com/MMOCKING/manual_calib/assets/61079012/a9ad471f-6c48-4780-8d07
 
 https://github.com/MMOCKING/manual_calib/assets/61079012/cfaede69-b8fa-4d71-8293-d795d60319e0
 
-## 红外内参标定
+## 标定示例
+
+### 红外内参标定
 
 分别用matlab标定了有黑边1920\*1080和去除黑边640\*480图像。
 
@@ -108,7 +112,7 @@ cameraParams.RadialDistortion
 -0.200600349900097   -0.045799082965466
 ```
 
-## 激光-红外标定
+### 激光-红外标定
 
 点云转化关系：$P_c = R * P_l + t$；
 然后将$P_c$通过内参投影至像素平面。
@@ -134,7 +138,7 @@ P lidar_to_cam:
 
 ![](pic/calib_thermal.png)
 
-## 激光-毫米波标定
+### 激光-毫米波标定
 
 根据原lidar_cam_calib的手动激光-毫米波标定。
 
