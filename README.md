@@ -1,18 +1,34 @@
 # Manual Camera-LiDAR-Radar Calibration
 
-相机-激光雷达外参标定
+## 外参标定
+
+### 备注
+
+- 本仓库基于https://github.com/icameling/lidar_camera_calibration/tree/manual_calib开发。
+- 需要修改config目录下的相机内参。
+- 如果需要微调，可以修改cfg/Locator.cfg文件中的外参初值与上下限。
+
+### 相机-激光雷达外参标定
+
+在launch文件中修改订阅的topic与点云显示距离。注意，需要根据图片topic是否为compressed类型修改lidar_cam_calib.cpp下的内容。
+
+```cpp
+sensor_msgs::CompressedImage
+```
 
 ```shell
 roslaunch ilcc2 lidar_cam_calib.launch
 ```
 
-毫米波雷达-激光雷达外参标定
+使用rqt窗口内的roll/pitch/yaw/x/y/z移动激光点云，调整外参。本仓库中采用的旋转顺序为YXZ。
+
+### 毫米波雷达-激光雷达外参标定
 
 ```shell
 roslaunch ilcc2 lidar_radar_calib.launch
 ```
 
-使用rqt窗口内的roll/pitch/yaw/x/y/z调整外参。
+使用rqt窗口内的roll/pitch/yaw/x/y/z移动激光点云，调整外参。
 
 ## 传感器安装示例
 
