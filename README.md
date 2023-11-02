@@ -125,8 +125,6 @@ cameraParams.RadialDistortion
 点云转化关系：$P_c = R * P_l + t$；
 然后将$P_c$通过内参投影至像素平面。
 
-https://github.com/icameling/lidar_camera_calibration/tree/manual_calib
-
 原代码有万向节死锁问题，修改旋转顺序ZYX为YXZ。更换库函数setRPY()为setRPY_YXZ()函数。同理也可替换为XYZ等顺序。
 
 根据订阅的图像是否为compressed需要修改代码中的变量类型。
