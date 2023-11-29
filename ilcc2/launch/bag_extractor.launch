@@ -2,7 +2,7 @@
 <launch>
 
   <node pkg="ilcc2" type="bag_extractor" name="bag_extractor" output="screen">
-    <param name="bag_file_path"  value= "/media/lh/lh1/dataset/calib/2023-11-04-14-37-38.bag" />
+    <param name="bag_file_path"  value= "/media/lh/lh1/dataset/zw/all_data.bag" />
     <param name="thermal_topic"  value= "/usb_cam/image_raw/compressed" />
     <param name="lidar_topic"    value= "/rslidar_points_1" />
     <param name="radar_topic"    value= "/Target_Radar_3" />
