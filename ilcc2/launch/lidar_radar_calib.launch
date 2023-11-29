@@ -2,7 +2,7 @@
 <launch>
 
   <node pkg="ilcc2" type="lidar_radar_calib" name="lidar_radar_calib" output="screen">
-    <param name="lidar_topic"         value= "/rslidar_points" />
+    <param name="lidar_topic"         value= "/rslidar_points_1" />
     <param name="radar_frame_id"         value= "car" />
   </node>
 

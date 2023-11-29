@@ -5,7 +5,7 @@
     <param name="cloud_max_distance"  value= "30" />
     <param name="yaml_path"           value= "cam_intrinsic.yaml" />
     <param name="image_topic"         value= "/usb_cam/image_raw/compressed" />
-    <param name="lidar_topic"         value= "/rslidar_points" />
+    <param name="lidar_topic"         value= "/rslidar_points_1" />
   </node>
 
   <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" output="screen"/>

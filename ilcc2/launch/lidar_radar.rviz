@@ -6,7 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Image1
+        - /PointCloud21
+        - /PointCloud21/Status1
+        - /PointCloud22
       Splitter Ratio: 0.5
     Tree Height: 385
   - Class: rviz/Selection
@@ -104,7 +106,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.10000000149011612
       Style: Flat Squares
-      Topic: /Target_Radar_1
+      Topic: /Target_Radar_3
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -149,16 +151,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 70.95894622802734
+      Distance: 106.90089416503906
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 18.472938537597656
-        Y: 1.3941826820373535
-        Z: 11.98953914642334
+        X: 10.750166893005371
+        Y: 1.7241355180740356
+        Z: 10.048759460449219
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false

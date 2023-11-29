@@ -74,7 +74,7 @@ int main(int argc, char** argv)
     ros::NodeHandle nh_private("~");
 
     std::string lidar_topic;
-    nh_private.param<std::string>("image_topic", lidar_topic, "/rslidar_points");
+    nh_private.param<std::string>("lidar_topic", lidar_topic, "/rslidar_points_1");
     nh_private.param<std::string>("radar_frame_id", radar_frame_id, "car");
     transformed_cloud_pub = nh.advertise<sensor_msgs::PointCloud2>("/transformed_lidar_cloud", 1);
 
